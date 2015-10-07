@@ -96,7 +96,8 @@ def scrape_warranty_site(serial, graceful=True):
                 date = parser.parse(line.split('Date: ')[1].split('<br/')[0])
                 status = line.split('Coverage: ')[1].split('\',')[0]
     else:
-        date, status   = 'Expired', 'Inactive'
+        date = parser.parse(line.split('Date: ')[1].split('<br/')[0])
+        status = line.split('Coverage: ')[1].split('\',')[0]
 
     return model, date, status
 
@@ -110,8 +111,8 @@ def file_output(file, warranty_info):
         )
 
 def warranty_output(warranty_info):
-    print('mac_product_name=' + format(warranty_info[1]))
-    print('mac_warranty=' + format(warranty_info[2]))
+    print('mac_applecare_name=' + format(warranty_info[1]))
+    print('mac_applecare_expiration=' + format(warranty_info[2]))
 
 def main():
     '''Main method'''
