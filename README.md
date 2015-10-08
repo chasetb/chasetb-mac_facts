@@ -6,9 +6,17 @@ Custom Facts written for OS X machines. Fact files were intended to be used with
 
 ##Installation Package
 
-Run the installation package to have these facts automatically installed on your machine or deployed to a remote machine.
+Run the installation package to have these Facts automatically installed on your machine or deployed to a remote machine. Installation package assumes Facts will be used with Sal.
 
 ======
+
+##Manual Installation
+
+For use with Sal, place facts files ending in `.rb` in `/usr/local/sal/facter/`
+
+For standalone Facter use, place facts files ending in `.rb` in `/usr/lib/ruby/site_ruby/facter`
+
+Place external Facts in `/etc/facter/facts.d/` (You may need to create this directory)
 
 ##Fact Descriptions
 
